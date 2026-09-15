@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo Web</title>
     <link rel="icon" href="azul.ico" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -37,69 +38,6 @@
             }
         }
     </script>
-    <style>
-        /* Estilos base y transiciones */
-        body { transition: background-color 0.3s ease, color 0.3s ease; }
-        
-        /* Ocultar barra de scroll para un look más limpio */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #581845; border-radius: 4px; }
-        .dark ::-webkit-scrollbar-thumb { background: #900c3f; }
-
-        /* Clases de animación para scroll */
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-        .reveal-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
-
-        /* Efecto Glow en botones */
-        .btn-glow {
-            position: relative;
-        }
-        .btn-glow::before {
-            content: '';
-            position: absolute;
-            top: -2px; left: -2px; right: -2px; bottom: -2px;
-            background: linear-gradient(45deg, #0000ee, #900c3f, #d4af37);
-            z-index: -1;
-            border-radius: 9999px;
-            filter: blur(8px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .btn-glow:hover::before { opacity: 0.8; }
-
-        /* Efecto Glassmorphism */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        html:not(.dark) .glass-card {
-            background: rgba(0, 0, 0, 0.02);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        /* Lienzo interactivo */
-        #bg-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -2;
-            pointer-events: none;
-        }
-    </style>
 </head>
 <body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-white antialiased transition-colors duration-300">
 
@@ -140,7 +78,7 @@
         </div>
     </nav>
 
-    <!-- Botón Flotante de WhatsApp (Logo Corregido) -->
+    <!-- Botón Flotante de WhatsApp -->
     <a href="https://wa.me/542975177297?text=Hola%20Joel,%20vengo%20de%20tu%20sitio%20web%20y%20quiero%20hacer%20una%20consulta." target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center group" aria-label="Contactar por WhatsApp">
         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
@@ -236,25 +174,36 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 (Mockup E-commerce) -->
+                <!-- Project 1: TuTienda (Escaparate Interactivo en Vivo) -->
                 <a href="https://tutiendaonline.vercel.app" target="_blank" class="group glass-card rounded-2xl overflow-hidden reveal-up delay-100 block">
-                    <div class="h-48 bg-zinc-100 dark:bg-zinc-800 relative overflow-hidden p-5 flex flex-col justify-end">
-                        <!-- Estructura Mockup E-Commerce -->
-                        <div class="absolute top-4 left-4 right-4 flex justify-between items-center opacity-60">
-                            <div class="w-16 h-3 bg-zinc-300 dark:bg-zinc-600 rounded"></div>
-                            <div class="flex gap-1.5">
-                                <div class="w-3 h-3 bg-zinc-300 dark:bg-zinc-600 rounded-full"></div>
-                                <div class="w-3 h-3 bg-zinc-300 dark:bg-zinc-600 rounded-full"></div>
+                    <div class="h-48 bg-zinc-950 relative overflow-hidden p-3 border-b border-white/5">
+                        <div class="flex items-center justify-between pb-2 mb-2 border-b border-white/10 text-[10px] text-zinc-400">
+                            <span class="font-bold text-white tracking-wider flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-cherry"></span> TuTienda
+                            </span>
+                            <span class="bg-cherry/20 text-[#ff4d88] px-2 py-0.5 rounded text-[9px] font-semibold">Envío Gratis</span>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-2 animate-catalog">
+                            <div class="bg-zinc-900 rounded-lg p-2 border border-white/5 group-hover:border-[#0000ee]/50 transition-colors">
+                                <div class="h-14 bg-zinc-800 rounded mb-1.5 flex items-center justify-center text-xl">👟</div>
+                                <div class="text-[9px] font-semibold text-white truncate">Sneakers Air</div>
+                                <div class="text-[9px] text-gold font-bold">$84.99</div>
+                            </div>
+                            <div class="bg-zinc-900 rounded-lg p-2 border border-white/5 group-hover:border-[#0000ee]/50 transition-colors">
+                                <div class="h-14 bg-zinc-800 rounded mb-1.5 flex items-center justify-center text-xl">⌚</div>
+                                <div class="text-[9px] font-semibold text-white truncate">Smart Watch</div>
+                                <div class="text-[9px] text-gold font-bold">$129.00</div>
+                            </div>
+                            <div class="bg-zinc-900 rounded-lg p-2 border border-white/5 group-hover:border-[#0000ee]/50 transition-colors">
+                                <div class="h-14 bg-zinc-800 rounded mb-1.5 flex items-center justify-center text-xl">🎧</div>
+                                <div class="text-[9px] font-semibold text-white truncate">Wireless Pro</div>
+                                <div class="text-[9px] text-gold font-bold">$59.50</div>
                             </div>
                         </div>
-                        <div class="grid grid-cols-3 gap-3 w-full opacity-80 mt-10">
-                            <div class="h-20 bg-white dark:bg-zinc-700 rounded-lg shadow-sm border border-zinc-200 dark:border-zinc-600"></div>
-                            <div class="h-20 bg-white dark:bg-zinc-700 rounded-lg shadow-sm border border-zinc-200 dark:border-zinc-600"></div>
-                            <div class="h-20 bg-white dark:bg-zinc-700 rounded-lg shadow-sm border border-zinc-200 dark:border-zinc-600"></div>
-                        </div>
-                        
-                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                            <span class="text-white font-medium flex items-center gap-2">Visitar Tienda <span class="text-gold">→</span></span>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/95 via-zinc-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                            <span class="text-white font-medium text-sm flex items-center gap-2">Visitar Tienda <span class="text-gold">→</span></span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -267,19 +216,31 @@
                     </div>
                 </a>
 
-                <!-- Project 2 -->
+                <!-- Project 2: Terminal Consola (Ejecutando Pseudocódigo) -->
                 <a href="https://joelinton.vercel.app/consola" target="_blank" class="group glass-card rounded-2xl overflow-hidden reveal-up delay-200 block">
-                    <div class="h-48 bg-zinc-900 relative overflow-hidden">
-                        <div class="absolute top-3 left-4 flex gap-1.5">
-                            <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                    <div class="h-48 bg-[#0a0d14] relative overflow-hidden p-4 font-mono text-[11px] leading-relaxed select-none border-b border-white/5 flex flex-col justify-between">
+                        <div class="flex items-center justify-between pb-2 mb-1 border-b border-white/5">
+                            <div class="flex gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                            </div>
+                            <span class="text-[9px] text-zinc-400">interprete_pseudocodigo.exe</span>
                         </div>
-                        <div class="absolute inset-0 flex items-center justify-center text-green-400 font-mono text-xs mt-4">
-                            > init_terminal...<br>> ready.
+
+                        <div class="text-zinc-300 my-auto">
+                            <p class="text-zinc-500 text-[10px]">> Ejecutar algoritmo...</p>
+                            <p class="text-blue-400 font-semibold" id="live-pseudocode-line"></p>
+                            <div id="live-pseudocode-output" class="text-emerald-400 text-[10px] mt-1 space-y-0.5 min-h-[38px]"></div>
                         </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                            <span class="text-white font-medium flex items-center gap-2">Ver Consola <span class="text-gold">→</span></span>
+
+                        <div class="flex items-center justify-between text-[9px] text-zinc-500 pt-1 border-t border-white/5">
+                            <span>Estado: <span class="text-emerald-400 font-medium">Interprete activo</span></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                            <span class="text-white font-medium text-sm flex items-center gap-2">Abrir Consola <span class="text-gold">→</span></span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -288,37 +249,64 @@
                             <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-[#0000ee]/10 text-[#0000ee] dark:text-[#5c5cff] rounded">CLI Web</span>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Terminal Consola</h3>
-                        <p class="text-zinc-600 dark:text-zinc-400 text-sm">Aplicación interactiva que simula una terminal de comandos directamente en el navegador.</p>
+                        <p class="text-zinc-600 dark:text-zinc-400 text-sm">Aplicación interactiva que interpreta y simula ejecución de algoritmos y comandos en tiempo real.</p>
                     </div>
                 </a>
 
-                <!-- Project 3 (Mockup IDE/Simulador) -->
+                <!-- Project 3: PseudoAssembler (Simulador Intel 8085 en Vivo) -->
                 <a href="https://joelinton.vercel.app/PSEUDOASSEMBLER" target="_blank" class="group glass-card rounded-2xl overflow-hidden reveal-up delay-300 block">
-                    <div class="h-48 bg-[#0d1117] relative overflow-hidden p-5 font-mono text-xs leading-tight">
-                        <!-- Estructura Mockup IDE Code -->
-                        <div class="flex gap-4 opacity-75">
-                            <div class="flex flex-col text-zinc-600 items-end select-none">
-                                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                    <div class="h-48 bg-[#090d16] relative overflow-hidden p-3 font-mono text-[10px] border-b border-white/5 flex flex-col justify-between">
+                        <div class="flex items-center justify-between pb-1.5 border-b border-white/5 text-[9px]">
+                            <span class="text-gold flex items-center gap-1.5 font-bold">
+                                <span class="w-2 h-2 rounded-full bg-gold"></span> Intel 8085 CPU
+                            </span>
+                            <span class="text-zinc-400" id="i8085-flags">S:0 Z:0 CY:0</span>
+                        </div>
+
+                        <!-- Panel de registros 8085 -->
+                        <div class="grid grid-cols-4 gap-1 text-center py-1 bg-black/40 rounded border border-white/5 text-[9px]">
+                            <div><span class="text-zinc-500">A:</span> <span id="reg-a" class="text-emerald-400 font-semibold">00H</span></div>
+                            <div><span class="text-zinc-500">B:</span> <span id="reg-b" class="text-blue-400 font-semibold">00H</span></div>
+                            <div><span class="text-zinc-500">H-L:</span> <span class="text-purple-400 font-semibold">2050H</span></div>
+                            <div><span class="text-zinc-500">PC:</span> <span id="reg-pc" class="text-gold font-semibold">0800H</span></div>
+                        </div>
+
+                        <!-- Código ensamblador 8085 -->
+                        <div class="space-y-0.5 my-auto text-[9.5px]">
+                            <div class="flex items-center gap-2 px-1.5 py-0.5 rounded transition-all" id="asm8085-1">
+                                <span class="text-zinc-600 select-none text-[8px]">0800H</span>
+                                <code><span class="text-purple-400">MVI</span> <span class="text-blue-300">A</span>, <span class="text-emerald-400">05H</span></code>
                             </div>
-                            <div class="flex flex-col text-blue-400">
-                                <span class="text-pink-500">define <span class="text-blue-300">logic_gate</span>() {</span>
-                                <span class="pl-4">MOV AX, 01</span>
-                                <span class="pl-4">ADD BX, AX</span>
-                                <span class="pl-4 text-zinc-400">// Execute</span>
-                                <span class="text-pink-500">}</span>
+                            <div class="flex items-center gap-2 px-1.5 py-0.5 rounded transition-all" id="asm8085-2">
+                                <span class="text-zinc-600 select-none text-[8px]">0802H</span>
+                                <code><span class="text-purple-400">MOV</span> <span class="text-blue-300">B</span>, <span class="text-blue-300">A</span></code>
+                            </div>
+                            <div class="flex items-center gap-2 px-1.5 py-0.5 rounded transition-all" id="asm8085-3">
+                                <span class="text-zinc-600 select-none text-[8px]">0803H</span>
+                                <code><span class="text-purple-400">INR</span> <span class="text-blue-300">A</span></code>
+                            </div>
+                            <div class="flex items-center gap-2 px-1.5 py-0.5 rounded transition-all" id="asm8085-4">
+                                <span class="text-zinc-600 select-none text-[8px]">0804H</span>
+                                <code><span class="text-purple-400">STA</span> <span class="text-gold">2050H</span></code>
                             </div>
                         </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                            <span class="text-white font-medium flex items-center gap-2">Ver Simulador <span class="text-gold">→</span></span>
+
+                        <div class="bg-black/60 px-2 py-0.5 rounded text-[9px] text-zinc-400 border border-white/5 flex justify-between items-center">
+                            <span id="asm-status">[RUN] Executing Cycle...</span>
+                            <span class="text-[8px] text-zinc-500">T-States: 4</span>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                            <span class="text-white font-medium text-sm flex items-center gap-2">Ver Simulador 8085 <span class="text-gold">→</span></span>
                         </div>
                     </div>
                     <div class="p-6">
                         <div class="flex gap-2 mb-3">
-                            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-gold/20 text-yellow-700 dark:text-gold rounded">Lógica</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-cherry/10 text-cherry dark:text-[#ff4d88] rounded">App Compleja</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-gold/20 text-yellow-700 dark:text-gold rounded">Intel 8085</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-cherry/10 text-cherry dark:text-[#ff4d88] rounded">Emulador</span>
                         </div>
                         <h3 class="text-xl font-bold mb-2">PseudoAssembler</h3>
-                        <p class="text-zinc-600 dark:text-zinc-400 text-sm">Simulador lógico y compilador web para demostrar capacidades avanzadas de desarrollo.</p>
+                        <p class="text-zinc-600 dark:text-zinc-400 text-sm">Simulador y emulador del set de instrucciones 8085 con visualización de registros y memoria.</p>
                     </div>
                 </a>
             </div>
@@ -340,9 +328,7 @@
                 </div>
 
                 <!-- FORMULARIO CON FORMSUBMIT -->
-                <!-- Cambia 'cabrerah888@gmail.com' si necesitas. FormSubmit te pedirá confirmación por email la primera vez -->
                 <form action="https://formsubmit.co/cabrerah888@gmail.com" method="POST" class="space-y-6 relative z-10">
-                    <!-- Evita redirección fea (opcional): redirige de vuelta a tu página -->
                     <input type="hidden" name="_next" value="https://joelinton.com.ar"> 
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_subject" value="Nuevo prospecto web de Landing Page">
@@ -410,170 +396,6 @@
         </div>
     </footer>
 
-    <!-- Scripts de Interacción -->
-    <script>
-        // --- 1. DARK MODE TOGGLE ---
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const darkIcon = document.getElementById('theme-toggle-dark-icon');
-        const lightIcon = document.getElementById('theme-toggle-light-icon');
-
-        // Check if dark mode is preferred or set
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            lightIcon.classList.remove('hidden');
-        } else {
-            document.documentElement.classList.remove('dark');
-            darkIcon.classList.remove('hidden');
-        }
-
-        themeToggleBtn.addEventListener('click', function() {
-            darkIcon.classList.toggle('hidden');
-            lightIcon.classList.toggle('hidden');
-
-            if (localStorage.getItem('color-theme')) {
-                if (localStorage.getItem('color-theme') === 'light') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                }
-            } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                }
-            }
-        });
-
-        // --- 2. SCROLL ANIMATIONS (Intersection Observer) ---
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-up').forEach((elem) => {
-            observer.observe(elem);
-        });
-
-        // --- 3. NAVBAR EFECTO SCROLL ---
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 20) {
-                nav.classList.add('shadow-lg');
-            } else {
-                nav.classList.remove('shadow-lg');
-            }
-        });
-
-        // --- 4. CANVAS BACKGROUND (Estrellas/Partículas Premium) ---
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let width, height, particles;
-
-        function initCanvas() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            particles = [];
-            const isDark = document.documentElement.classList.contains('dark');
-            const particleCount = window.innerWidth < 768 ? 30 : 70;
-
-            for (let i = 0; i < particleCount; i++) {
-                particles.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    radius: Math.random() * 2 + 0.5,
-                    vx: (Math.random() - 0.5) * 0.5,
-                    vy: (Math.random() - 0.5) * 0.5,
-                    // Colores: Oro sutil o rojo oscuro
-                    color: Math.random() > 0.5 ? '#d4af37' : '#900c3f'
-                });
-            }
-        }
-
-        let mouse = { x: null, y: null };
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = e.x;
-            mouse.y = e.y;
-        });
-
-        function animateCanvas() {
-            requestAnimationFrame(animateCanvas);
-            ctx.clearRect(0, 0, width, height);
-            
-            const isDark = document.documentElement.classList.contains('dark');
-
-            particles.forEach(p => {
-                p.x += p.vx;
-                p.y += p.vy;
-
-                // Rebotar bordes
-                if (p.x < 0 || p.x > width) p.vx *= -1;
-                if (p.y < 0 || p.y > height) p.vy *= -1;
-
-                // Interacción con mouse (esquivar suavemente)
-                if (mouse.x != null && mouse.y != null) {
-                    let dx = mouse.x - p.x;
-                    let dy = mouse.y - p.y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 100) {
-                        p.x -= dx * 0.02;
-                        p.y -= dy * 0.02;
-                    }
-                }
-
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fillStyle = p.color;
-                // Ajustar opacidad según el tema para que no estorbe
-                ctx.globalAlpha = isDark ? 0.3 : 0.1;
-                ctx.fill();
-            });
-
-            // Conectar partículas cercanas
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i; j < particles.length; j++) {
-                    let dx = particles[i].x - particles[j].x;
-                    let dy = particles[i].y - particles[j].y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < 120) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = particles[i].color;
-                        ctx.globalAlpha = isDark ? (120 - distance) / 1000 : (120 - distance) / 2000;
-                        ctx.lineWidth = 1;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        window.addEventListener('resize', initCanvas);
-        
-        // Observar cambios de tema para reiniciar el canvas con las opacidades correctas
-        const observerTheme = new MutationObserver(() => {
-            initCanvas();
-        });
-        observerTheme.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-
-        initCanvas();
-        animateCanvas();
-
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
