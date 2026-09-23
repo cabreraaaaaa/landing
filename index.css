@@ -1,75 +1,77 @@
+body { 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
 
-        /* Estilos base y transiciones */
-        body { transition: background-color 0.3s ease, color 0.3s ease; }
-        
-        /* Ocultar barra de scroll para un look más limpio */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #581845; border-radius: 4px; }
-        .dark ::-webkit-scrollbar-thumb { background: #900c3f; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #581845; border-radius: 4px; }
+.dark ::-webkit-scrollbar-thumb { background: #900c3f; }
 
-        /* Clases de animación para scroll */
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-        .reveal-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
 
-        /* Efecto Glow en botones */
-        .btn-glow {
-            position: relative;
-        }
-        .btn-glow::before {
-            content: '';
-            position: absolute;
-            top: -2px; left: -2px; right: -2px; bottom: -2px;
-            background: linear-gradient(45deg, #0000ee, #900c3f, #d4af37);
-            z-index: -1;
-            border-radius: 9999px;
-            filter: blur(8px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .btn-glow:hover::before { opacity: 0.8; }
+.btn-glow {
+    position: relative;
+}
+.btn-glow::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(45deg, #0000ee, #900c3f, #d4af37);
+    z-index: -1;
+    border-radius: 9999px;
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.btn-glow:hover::before { opacity: 0.8; }
 
-        /* Efecto Glassmorphism */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        html:not(.dark) .glass-card {
-            background: rgba(0, 0, 0, 0.02);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+html:not(.dark) .glass-card {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
 
-        /* Lienzo interactivo */
-        #bg-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -2;
-            pointer-events: none;
-        }
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    pointer-events: none;
+}
 
-        /* Animación suave para catálogo de la tienda */
-        @keyframes scrollCatalog {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-40px); }
-            100% { transform: translateY(0); }
-        }
-        .animate-catalog {
-            animation: scrollCatalog 8s ease-in-out infinite;
-        }
-        .group:hover .animate-catalog {
-            animation-play-state: paused;
-        }
+@keyframes scrollCatalog {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-40px); }
+    100% { transform: translateY(0); }
+}
+.animate-catalog {
+    animation: scrollCatalog 8s ease-in-out infinite;
+}
+.group:hover .animate-catalog {
+    animation-play-state: paused;
+}
+
+.blue-logo-text {
+    -webkit-text-stroke: 1.5px #d4af37;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.35);
+    letter-spacing: 0.18em;
+    font-family: system-ui, -apple-system, sans-serif;
+}

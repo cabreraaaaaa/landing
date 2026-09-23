@@ -41,31 +41,24 @@
 </head>
 <body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-white antialiased transition-colors duration-300">
 
-    <!-- Canvas Background -->
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
         <div class="absolute inset-0 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-md border-b border-zinc-200 dark:border-white/10"></div>
         <div class="max-w-7xl mx-auto px-6 h-20 relative flex items-center justify-between">
-            <!-- Logo Identity -->
             <a href="#" class="flex items-center gap-3 group">
                 <div class="w-10 h-10 rounded-full bg-[#0000ee] shadow-[0_0_15px_rgba(0,0,238,0.5)] transition-transform group-hover:scale-110"></div>
             </a>
 
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#proyectos" class="text-sm font-medium hover:text-[#0000ee] dark:hover:text-gold transition-colors">Proyectos</a>
-                <a href="#ventajas" class="text-sm font-medium hover:text-[#0000ee] dark:hover:text-gold transition-colors">Ventajas IA</a>
+                <a href="#ventajas" class="text-sm font-medium hover:text-[#0000ee] dark:hover:text-gold transition-colors">Ventajas</a>
                 <a href="#contacto" class="text-sm font-medium hover:text-[#0000ee] dark:hover:text-gold transition-colors">Cotizar</a>
                 
-                <!-- Dark Mode Toggle -->
-                <button id="theme-toggle" class="p-2 rounded-full hover:bg-zinc-200 dark:hover:bg-white/10 transition-colors">
-                    <!-- Icono Sol (se muestra en modo oscuro) -->
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-zinc-200 dark:hover:bg-white/10 transition-colors" aria-label="Cambiar tema">
                     <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
                     </svg>
-                    <!-- Icono Luna (se muestra en modo claro) -->
                     <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-zinc-800" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
                     </svg>
@@ -78,15 +71,13 @@
         </div>
     </nav>
 
-    <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/542975177297?text=Hola%20Joel,%20vengo%20de%20tu%20sitio%20web%20y%20quiero%20hacer%20una%20consulta." target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center group" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/542975177297?text=Hola,%20vengo%20de%20tu%20sitio%20web%20y%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center group" aria-label="Contactar por WhatsApp">
         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
         </svg>
-        <span class="absolute right-16 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white px-3 py-1 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-md pointer-events-none">Escríbeme al WhatsApp</span>
+        <span class="absolute right-16 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white px-3 py-1 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-md pointer-events-none">Escribir por WhatsApp</span>
     </a>
 
-    <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div class="absolute top-1/4 -left-64 w-96 h-96 bg-cherry/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob"></div>
         <div class="absolute top-1/3 -right-64 w-96 h-96 bg-[#0000ee]/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -95,14 +86,14 @@
             <div class="max-w-4xl mx-auto text-center reveal-up">
                 <div class="inline-block mb-4 px-4 py-1.5 rounded-full border border-zinc-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-sm font-medium text-zinc-600 dark:text-zinc-300">
                     <span class="w-2 h-2 rounded-full bg-[#0000ee] inline-block mr-2 animate-pulse"></span>
-                    Desarrollo Web Ultra Rápido & Accesible
+                    Desarrollo Web Ágil & Efectivo
                 </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
-                    Tu emprendimiento digital, <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0000ee] via-cherry to-gold">potenciado por IA.</span>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+                    Hacé que tu negocio venda más y <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0000ee] via-cherry to-gold">dejá de perder horas por WhatsApp.</span>
                 </h1>
                 <p class="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-                    Olvídate de presupuestos inflados y agencias lentas. Usamos Inteligencia Artificial para diseñar, desarrollar y lanzar tu presencia digital en tiempo récord, optimizando tus costos al máximo sin perder calidad premium.
+                    Landings y catálogos interactivos para que tus clientes vean tus productos, resuelvan sus dudas y te manden pedidos cerrados listos para entregar.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a href="#contacto" class="btn-glow px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-full transition-transform hover:scale-105 w-full sm:w-auto text-center">
@@ -116,66 +107,60 @@
         </div>
     </section>
 
-    <!-- Ventajas Section -->
     <section id="ventajas" class="py-24 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 reveal-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Por qué nuestro método es diferente?</h2>
-                <p class="text-zinc-600 dark:text-zinc-400">El secreto está en la eficiencia tecnológica.</p>
+                <p class="text-zinc-600 dark:text-zinc-400">El secreto está en la eficiencia y la simplicidad.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
                 <div class="glass-card p-8 rounded-2xl reveal-up delay-100 hover:-translate-y-2 transition-transform duration-300">
                     <div class="w-12 h-12 rounded-full bg-cherry/10 flex items-center justify-center mb-6">
                         <span class="text-2xl">⚡</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Velocidad Récord</h3>
+                    <h3 class="text-xl font-bold mb-3">Velocidad de Entrega</h3>
                     <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                        Al apoyarnos en herramientas de IA, reducimos semanas de código manual a solo días. Tu sitio web listo para vender cuando realmente lo necesitas.
+                        Desarrollo estructurado y ágil para tener tu presencia digital lista en 48 a 72 horas, preparada para recibir visitas y pedidos.
                     </p>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="glass-card p-8 rounded-2xl reveal-up delay-200 hover:-translate-y-2 transition-transform duration-300">
                     <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-6">
                         <span class="text-2xl">💰</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Costos Optimizados</h3>
+                    <h3 class="text-xl font-bold mb-3">Costos Accesibles</h3>
                     <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                        No te cobramos por horas de teclear código. Usamos tecnología de vanguardia para abaratar costos operativos y trasladar ese ahorro directo a tu bolsillo.
+                        Presupuestos pensados para negocios en crecimiento. Sin costos ocultos, servidores complejos ni mensualidades obligatorias.
                     </p>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="glass-card p-8 rounded-2xl reveal-up delay-300 hover:-translate-y-2 transition-transform duration-300">
                     <div class="w-12 h-12 rounded-full bg-[#0000ee]/10 flex items-center justify-center mb-6">
-                        <span class="text-2xl">🧠</span>
+                        <span class="text-2xl">📱</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Diseño Inteligente</h3>
+                    <h3 class="text-xl font-bold mb-3">Enfoque Celular</h3>
                     <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                        Domino las herramientas por ti. Aplico las mejores prácticas de UI/UX, animaciones fluidas y estructuras modernas para que impresiones a tus clientes.
+                        Más del 85% de tus clientes te visitan desde un smartphone. Tu web carga al instante y con navegación totalmente táctil.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="proyectos" class="py-24 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal-up">
                 <div>
                     <h2 class="text-3xl md:text-5xl font-bold mb-4">Proyectos Reales</h2>
                     <p class="text-zinc-600 dark:text-zinc-400 max-w-xl">
-                        Ejemplos de lo que podemos lograr: desde catálogos e-commerce hasta interfaces complejas y simuladores lógicos.
+                        Ejemplos de interfaces y desarrollos en funcionamiento: desde catálogos comerciales hasta aplicaciones web y herramientas lógicas.
                     </p>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1: TuTienda (Escaparate Interactivo en Vivo) -->
-                <a href="https://tutiendaonline.vercel.app" target="_blank" class="group glass-card rounded-2xl overflow-hidden reveal-up delay-100 block">
+            <div class="grid md:grid-cols-2 gap-8">
+                <a href="https://tutiendaonline.vercel.app" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl overflow-hidden reveal-up delay-100 block">
                     <div class="h-48 bg-zinc-950 relative overflow-hidden p-3 border-b border-white/5">
                         <div class="flex items-center justify-between pb-2 mb-2 border-b border-white/10 text-[10px] text-zinc-400">
                             <span class="font-bold text-white tracking-wider flex items-center gap-1.5">
@@ -216,8 +201,57 @@
                     </div>
                 </a>
 
-                <!-- Project 2: Terminal Consola (Ejecutando Pseudocódigo) -->
-                <a href="https://joelinton.vercel.app/consola" target="_blank" class="group glass-card rounded-2xl overflow-hidden reveal-up delay-200 block">
+                <a href="https://joelinton.vercel.app" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl overflow-hidden reveal-up delay-150 block border border-white/5 hover:border-gold/40 transition-colors">
+                    <div class="h-48 bg-gradient-to-br from-[#0a0d14] via-[#120810] to-[#0d0714] relative overflow-hidden p-4 border-b border-white/5 flex flex-col justify-between">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none select-none">
+                            <span class="text-8xl font-black tracking-widest text-zinc-500 font-mono" id="blue-bg-clock">18:55</span>
+                        </div>
+
+                        <div class="flex items-center justify-between pb-1.5 border-b border-white/10 text-[10px] text-zinc-400 relative z-10">
+                            <span class="flex items-center gap-1.5 font-bold tracking-widest text-zinc-300">
+                                <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span> BLUE
+                            </span>
+                            <span class="text-[9px] bg-white/10 text-zinc-300 px-2 py-0.5 rounded font-mono">joelinton.vercel.app</span>
+                        </div>
+
+                        <div class="my-auto text-center relative z-10 py-1">
+                            <div class="inline-block text-3xl font-black tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 blue-logo-text select-none">
+                                BLU∃
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2 relative z-10">
+                            <div class="bg-black/60 border border-white/10 rounded-lg p-2 flex items-center justify-between">
+                                <div class="truncate">
+                                    <span class="text-[8px] uppercase tracking-wider text-zinc-500 block">CONSOLA IDE</span>
+                                    <span class="text-[10px] font-semibold text-zinc-200 truncate">Pseudocódigo</span>
+                                </div>
+                                <span class="text-zinc-500 text-xs">→</span>
+                            </div>
+                            <div class="bg-black/60 border border-white/10 rounded-lg p-2 flex items-center justify-between">
+                                <div class="truncate">
+                                    <span class="text-[8px] uppercase tracking-wider text-blue-400 block">BAJO NIVEL</span>
+                                    <span class="text-[10px] font-semibold text-zinc-200 truncate">Pseudoassembler</span>
+                                </div>
+                                <span class="text-zinc-500 text-xs">→</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5 z-20">
+                            <span class="text-white font-medium text-sm flex items-center gap-2">Abrir Entorno BLUE <span class="text-gold">→</span></span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-gold/15 text-yellow-700 dark:text-gold rounded">Suite</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-[#0000ee]/10 text-[#0000ee] dark:text-[#5c5cff] rounded">Portal</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">BLUE</h3>
+                        <p class="text-zinc-600 dark:text-zinc-400 text-sm">Plataforma central interactiva con accesos a entornos de prueba de código y simuladores.</p>
+                    </div>
+                </a>
+
+                <a href="https://joelinton.vercel.app/consola" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl overflow-hidden reveal-up delay-200 block">
                     <div class="h-48 bg-[#0a0d14] relative overflow-hidden p-4 font-mono text-[11px] leading-relaxed select-none border-b border-white/5 flex flex-col justify-between">
                         <div class="flex items-center justify-between pb-2 mb-1 border-b border-white/5">
                             <div class="flex gap-1.5">
@@ -253,8 +287,7 @@
                     </div>
                 </a>
 
-                <!-- Project 3: PseudoAssembler (Simulador Intel 8085 en Vivo) -->
-                <a href="https://joelinton.vercel.app/PSEUDOASSEMBLER" target="_blank" class="group glass-card rounded-2xl overflow-hidden reveal-up delay-300 block">
+                <a href="https://joelinton.vercel.app/PSEUDOASSEMBLER" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl overflow-hidden reveal-up delay-300 block">
                     <div class="h-48 bg-[#090d16] relative overflow-hidden p-3 font-mono text-[10px] border-b border-white/5 flex flex-col justify-between">
                         <div class="flex items-center justify-between pb-1.5 border-b border-white/5 text-[9px]">
                             <span class="text-gold flex items-center gap-1.5 font-bold">
@@ -263,7 +296,6 @@
                             <span class="text-zinc-400" id="i8085-flags">S:0 Z:0 CY:0</span>
                         </div>
 
-                        <!-- Panel de registros 8085 -->
                         <div class="grid grid-cols-4 gap-1 text-center py-1 bg-black/40 rounded border border-white/5 text-[9px]">
                             <div><span class="text-zinc-500">A:</span> <span id="reg-a" class="text-emerald-400 font-semibold">00H</span></div>
                             <div><span class="text-zinc-500">B:</span> <span id="reg-b" class="text-blue-400 font-semibold">00H</span></div>
@@ -271,7 +303,6 @@
                             <div><span class="text-zinc-500">PC:</span> <span id="reg-pc" class="text-gold font-semibold">0800H</span></div>
                         </div>
 
-                        <!-- Código ensamblador 8085 -->
                         <div class="space-y-0.5 my-auto text-[9.5px]">
                             <div class="flex items-center gap-2 px-1.5 py-0.5 rounded transition-all" id="asm8085-1">
                                 <span class="text-zinc-600 select-none text-[8px]">0800H</span>
@@ -313,25 +344,22 @@
         </div>
     </section>
 
-    <!-- Contact Section / CTA -->
     <section id="contacto" class="py-24 relative z-10">
         <div class="max-w-4xl mx-auto px-6 reveal-up">
             <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden border-t border-[#0000ee]/30">
-                <!-- Decoración -->
                 <div class="absolute -top-24 -right-24 w-48 h-48 bg-cherry rounded-full mix-blend-screen filter blur-3xl opacity-20"></div>
                 
                 <div class="text-center mb-10 relative z-10">
                     <h2 class="text-3xl md:text-5xl font-bold mb-4">Empecemos tu proyecto</h2>
                     <p class="text-zinc-600 dark:text-zinc-400">
-                        Cuéntame de tu emprendimiento. Te enviaré una propuesta tecnológica y un presupuesto optimizado que superará tus expectativas.
+                        Contame de tu emprendimiento. Te enviaré una propuesta clara para poner tu página en marcha.
                     </p>
                 </div>
 
-                <!-- FORMULARIO CON FORMSUBMIT -->
                 <form action="https://formsubmit.co/cabrerah888@gmail.com" method="POST" class="space-y-6 relative z-10">
                     <input type="hidden" name="_next" value="https://joelinton.com.ar"> 
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Nuevo prospecto web de Landing Page">
+                    <input type="hidden" name="_subject" value="Nuevo contacto desde la Web">
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
@@ -339,13 +367,13 @@
                             <input type="text" name="name" required class="w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 rounded-xl focus:outline-none focus:border-[#0000ee] transition-colors" placeholder="Ej. Juan Pérez">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium mb-2 text-zinc-700 dark:text-zinc-300">Email de Contacto</label>
-                            <input type="email" name="email" required class="w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 rounded-xl focus:outline-none focus:border-[#0000ee] transition-colors" placeholder="tucorreo@empresa.com">
+                            <label class="block text-sm font-medium mb-2 text-zinc-700 dark:text-zinc-300">WhatsApp o Email</label>
+                            <input type="text" name="contacto" required class="w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 rounded-xl focus:outline-none focus:border-[#0000ee] transition-colors" placeholder="+54 ... o correo@gmail.com">
                         </div>
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-2 text-zinc-700 dark:text-zinc-300">¿De qué trata tu negocio?</label>
-                        <textarea name="message" required rows="4" class="w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 rounded-xl focus:outline-none focus:border-[#0000ee] transition-colors resize-none" placeholder="Quiero una web para mi tienda de ropa, necesito integrar WhatsApp..."></textarea>
+                        <textarea name="message" required rows="4" class="w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 rounded-xl focus:outline-none focus:border-[#0000ee] transition-colors resize-none" placeholder="Contame qué vendes o qué necesitas mostrar..."></textarea>
                     </div>
                     <button type="submit" class="btn-glow w-full py-4 bg-[#0000ee] text-white font-bold rounded-xl transition-transform hover:scale-[1.02]">
                         Solicitar Cotización sin Compromiso
@@ -355,7 +383,7 @@
                 <div class="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-800 text-center relative z-10">
                     <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4">¿Prefieres un trato más directo?</p>
                     <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                        <a href="https://wa.me/542975177297" target="_blank" class="flex items-center gap-2 text-zinc-800 dark:text-white hover:text-[#25D366] dark:hover:text-[#25D366] font-medium transition-colors">
+                        <a href="https://wa.me/542975177297" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-zinc-800 dark:text-white hover:text-[#25D366] dark:hover:text-[#25D366] font-medium transition-colors">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
                             </svg>
@@ -373,19 +401,18 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-10 border-t border-zinc-200 dark:border-white/10 relative z-10 bg-white/50 dark:bg-transparent">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <div class="w-6 h-6 rounded-full bg-[#0000ee]"></div>
-                <span class="font-medium text-sm text-zinc-900 dark:text-white">Desarrollo Web & IA</span>
+                <span class="font-medium text-sm text-zinc-900 dark:text-white">Desarrollo Web</span>
             </div>
             
             <div class="flex gap-6 items-center">
-                <a href="https://instagram.com/joel._fra" target="_blank" class="text-zinc-500 hover:text-[#E1306C] transition-colors" aria-label="Instagram">
+                <a href="https://instagram.com/joel._fra" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-[#E1306C] transition-colors" aria-label="Instagram">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
-                <a href="https://wa.me/542975177297" target="_blank" class="text-zinc-500 hover:text-[#25D366] transition-colors" aria-label="WhatsApp">
+                <a href="https://wa.me/542975177297" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-[#25D366] transition-colors" aria-label="WhatsApp">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
                     </svg>
