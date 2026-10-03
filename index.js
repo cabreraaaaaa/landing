@@ -191,8 +191,8 @@ typePseudocode();
 const i8085Steps = [
     { line: 1, a: "05H", b: "00H", pc: "0802H", flags: "S:0 Z:0 CY:0", status: "[EXEC] MVI A, 05H" },
     { line: 2, a: "05H", b: "05H", pc: "0803H", flags: "S:0 Z:0 CY:0", status: "[EXEC] MOV B, A" },
-    { line: 3, a: "06H", b: "05H", pc: "0804H", flags: "S:0 Z:0 CY:0", status: "[EXEC] INR A (Increment)" },
-    { line: 4, a: "06H", b: "05H", pc: "0807H", flags: "S:0 Z:0 CY:0", status: "[STORE] Memory [2050H] = 06H" }
+    { line: 3, a: "06H", b: "05H", pc: "0804H", flags: "S:0 Z:0 CY:0", status: "[EXEC] INR A" },
+    { line: 4, a: "06H", b: "05H", pc: "0804H", flags: "S:0 Z:0 CY:0", status: "[EXEC] STA 2050H" }
 ];
 let i8085Index = 0;
 
